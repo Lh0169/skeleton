@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS skeleton DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE skeleton;
+
+CREATE TABLE IF NOT EXISTS sys_user (
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username    VARCHAR(64)  NOT NULL UNIQUE COMMENT '用户名',
+    password    VARCHAR(256) NOT NULL COMMENT '加密密码',
+    nickname    VARCHAR(64)  DEFAULT NULL COMMENT '昵称',
+    email       VARCHAR(128) DEFAULT NULL COMMENT '邮箱',
+    phone       VARCHAR(20)  DEFAULT NULL COMMENT '手机号',
+    avatar      VARCHAR(512) DEFAULT NULL COMMENT '头像URL',
+    status      TINYINT      DEFAULT 1 COMMENT '0=禁用,1=正常',
+    create_time DATETIME     DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted     TINYINT      DEFAULT 0 COMMENT '逻辑删除',
+    INDEX idx_username (username)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='系统用户';
+
+CREATE TABLE IF NOT EXISTS sys_role (
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(64)  NOT NULL COMMENT '角色名称',
+    code        VARCHAR(64)  NOT NULL UNIQUE COMMENT '角色编码',
+    description VARCHAR(256) DEFAULT NULL,
+    status      TINYINT      DEFAULT 1,
+    create_time DATETIME     DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted     TINYINT      DEFAULT 0,
+    INDEX idx_code (code)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='系统角色';

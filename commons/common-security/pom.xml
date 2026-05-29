@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent><groupId>com.skeleton</groupId><artifactId>skeleton</artifactId><version>1.0.0</version>
+           <relativePath>../../pom.xml</relativePath></parent>
+    <artifactId>common-security</artifactId>
+    <name>Common Security</name>
+    <description>安全模块：Spring Security配置、JWT过滤器、认证处理器、Token管理</description>
+
+    <dependencies>
+        <dependency><groupId>com.skeleton</groupId><artifactId>common-core</artifactId></dependency>
+        <dependency><groupId>com.skeleton</groupId><artifactId>common-redis</artifactId></dependency>
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-security</artifactId></dependency>
+    </dependencies>
+</project>

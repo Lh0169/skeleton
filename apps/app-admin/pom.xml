@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent><groupId>com.skeleton</groupId><artifactId>skeleton</artifactId><version>1.0.0</version>
+           <relativePath>../../pom.xml</relativePath></parent>
+    <artifactId>app-admin</artifactId>
+    <name>App Admin</name>
+    <description>应用入口：启动类、应用配置、Knife4j文档</description>
+
+    <dependencies>
+        <dependency><groupId>com.skeleton</groupId><artifactId>common-web</artifactId></dependency>
+        <dependency><groupId>com.skeleton</groupId><artifactId>common-security</artifactId></dependency>
+        <dependency><groupId>com.skeleton</groupId><artifactId>common-db</artifactId></dependency>
+        <dependency><groupId>com.skeleton</groupId><artifactId>module-auth</artifactId></dependency>
+        <dependency><groupId>com.skeleton</groupId><artifactId>module-system</artifactId></dependency>
+        <dependency><groupId>com.github.xiaoymin</groupId><artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId></dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,2 @@
+-- 启动时由 DataInitializer 自动创建默认管理员 (admin / admin123)
+-- 此文件仅作参考，实际初始化逻辑见 com.skeleton.admin.init.DataInitializer
